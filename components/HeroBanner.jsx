@@ -1,16 +1,32 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./styles.css";
+import axios from 'axios'
 import climber from "./assets/Activity_Stock_1.png";
 import bagPic from "./assets/bag-picture.png";
 import girlPic from "./assets/girl-picture.png";
 const HeroBanner = () => {
+  const url = "http://www.boredapi.com/api/activity/"
+
+  const [data, setData] = useState({});
+
+  const fetchInfo = async () => { 
+    const response = await axios.get(url)
+    setData(response.data)
+    console.log(response);
+  }
+  
+  useEffect(() => { 
+        fetchInfo(); 
+  }, [])
+  const info = data;
+  console.log(data);
   return (
     <div className="container">
       <div className="left-half">
         <div className="left-upper">
           <div>
-            <div className="key">22376</div>
-            <div className="heading">Explore the nightlife of your city </div>
+            <div className="key">{info.key}</div>
+            <div className="heading">{info.activity}</div>
 
             <div className="some-text">Outdoor & Sporting Goods Company</div>
 
@@ -113,7 +129,7 @@ const HeroBanner = () => {
               </div>
               <div className="icons-text">
                 <p className="icon-type">accessibility</p>
-                <p className="icon-value">0.32</p>
+                <p className="icon-value">{info.accessibility}</p>
               </div>
             </div>
             <div className="icon-inside-container">
@@ -144,7 +160,7 @@ const HeroBanner = () => {
 
               <div className="icons-text">
                 <p className="icon-type">type</p>
-                <p className="icon-value">social</p>
+                <p className="icon-value">{info.type}</p>
               </div>
             </div>
           </div>
@@ -154,7 +170,7 @@ const HeroBanner = () => {
       <div className="right-half">
         <div className="price">price
         <br />
-        <p className="price-value">0.1</p>
+        <p className="price-value">{info.price}</p>
         </div>
 
         <div className="collage">
