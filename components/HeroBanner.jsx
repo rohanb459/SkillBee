@@ -5,16 +5,20 @@ import climber from "./assets/Activity_Stock_1.png";
 import bagPic from "./assets/bag-picture.png";
 import girlPic from "./assets/girl-picture.png";
 const HeroBanner = () => {
-  const url = "http://www.boredapi.com/api/activity/"
+  const url = "https://www.boredapi.com/api/activity/"
 
   const [data, setData] = useState({});
 
-  const fetchInfo = async () => { 
-    const response = await axios.get(url)
-    setData(response.data)
-    console.log(response);
+  // const fetchInfo = async () => { 
+  //   const response = await axios.get(url)
+  //   setData(response.data)
+  //   console.log(response);
+  // }
+  const fetchInfo = () => {
+    return fetch(url)
+      .then((res) => res.json())
+      .then((d) => setData(d))
   }
-  
   useEffect(() => { 
         fetchInfo(); 
   }, [])
