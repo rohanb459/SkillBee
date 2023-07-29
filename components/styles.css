@@ -3,12 +3,17 @@
 }
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   overflow-x: hidden;
   overflow-y: hidden;
   height: auto;
 }
 
+.main{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
 .left-half {
   display: flex;
   flex-direction: column;
@@ -29,9 +34,10 @@
   display: flex;
   flex-direction: column;
   width: 45vw;
-  height: 100vh;
+  height: 90vh;
   position: relative;
   overflow: hidden;
+  bottom: 0;
 }
 .key {
   color: #2b2b35;
@@ -44,7 +50,7 @@
 }
 
 .heading {
-  width: 667px;
+  width: auto;
   height: fit-content;
   color: #2b2b35;
   font-family: "Poppins", sans-serif;
@@ -61,6 +67,7 @@
   width: 516px;
   height: 48px;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   color: #2b2b35;
   font-family: "Poppins", sans-serif;
@@ -124,12 +131,12 @@
 .digits {
   display: flex;
   align-items: flex-start;
+  font-family: "Poppins", sans-serif;
   gap: 94px;
 }
 .digit-upper-text {
   width: 176px;
   color: #2b2b35;
-  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -142,7 +149,7 @@ p{
 .digit-value{
     width: 152px;
     color: #2B2B35;
-font-family: Lexend Deca;
+font-family: "Poppins", sans-serif;
 font-size: 80px;
 font-style: normal;
 font-weight: 800;
@@ -153,7 +160,7 @@ text-transform: uppercase;
 .digit-lower-text{
     width: 176px; 
     color: #2B2B35;
-font-family: Lexend Deca;
+font-family: "Poppins", sans-serif;
 font-size: 14px;
 font-style: normal;
 font-weight: 600;
@@ -162,13 +169,13 @@ text-transform: uppercase;
 }
 
 .left-lower{
-width: 65vw;
+width: 100vw;
 height: 10%;
 flex-shrink: 0;
 background-color: #2B2B35;
 display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
+  justify-content: center;
+   align-items: center;
 position: relative;
 bottom:0;
 }
@@ -179,11 +186,13 @@ bottom:0;
 align-items: flex-start;
 gap: 119px;
 overflow-y: hidden;
+/* overflow-x: visible; */
 }
 
 .icon-inside-container{
     display: inline-flex;
     margin: auto;
+    width: fit-content;
     align-items: flex-start;
 }
 
@@ -228,14 +237,14 @@ text-transform: uppercase;
   flex-direction: row;
   /* border: black solid ; */
   height:60vh;
-  width: 35vw;
+  width: 100%;
   position: absolute;
   bottom: 0 ;
 }
 
 .left-side-collage{
   height: 60vh;
-  width:17.5vw;
+  width:fit-content;
 }
 
 .right-side-collage{
@@ -277,21 +286,23 @@ z-index: 1;
 
 .inner-ellipse{
   position: absolute;
-  width: 150px;
-height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
 flex-shrink: 0;
 z-index: 0;
 }
 
 .outer-ellipse{
-  width: 196px;
-height: 196px;
+  width: 12.25rem;
+  height: 12.25rem;
 flex-shrink: 0;
 }
 
 .center-logo{
   z-index: 2;
   position: absolute;
+  width: 6.25rem;
+height: 6.25rem;
   left: 37%;
   top: 37%;
 }
@@ -300,6 +311,8 @@ flex-shrink: 0;
   display: flex;
   flex-direction: row;
   position: relative;
+  justify-content: center;
+  align-items: center;
   z-index: 0;
 }
 
@@ -317,6 +330,150 @@ letter-spacing: -0.4px;
 text-transform: uppercase;
 }
 
-@media (max-width:425px) {
-  
+@media (max-width:430px) {
+  .main{
+    flex-direction: column;
+  }
+  .key{
+    font-size: 0.75rem;
+    line-height: 1.875rem;
+  }
+  .heading{
+    font-size: 2.25rem;
+    width: 90vw;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .some-text{
+    width: 90vw;
+    /* padding-top: 50px; */
+    align-items:normal;
+    height: fit-content;
+    line-height: 2.5rem;
+    font-size: 1rem;
+  }
+  .explore-button{
+    width: 14.80875rem;
+height: 3.75rem;
+margin-bottom: 30px;
+font-size: 0.875rem;
+  }
+  .complimentary-text{
+    visibility: hidden;
+  }
+  .digits{
+    gap: 40px;
+    width: 100vw;
+  }
+  .digits-upper-text{
+    font-size: 0.75rem;
+  }
+  .digit-value{
+    font-size: 2rem
+  }
+  .digit-lower-text{
+    font-size: 0.875rem;
+  }
+  .right-half{
+    width: 100vw;
+  }
+  .climber-image{
+    width: 50vw;
+  }
+  .bagpack{
+    width: 50vw;
+  }
+  .bag-image{
+    width: 6.92344rem;
+    height: 6.96944rem;
+  }
+  .girl{
+    width: 50vw;
+    /* height: 100%; */
+  }
+  .girl-image{
+    width: 100%;
+height: 100%;
+  }
+
+  .outer-ellipse{
+    width: 8.02956rem;
+height: 8.08288rem;
+  }
+  .inner-ellipse{
+    width: 6.14506rem;
+height: 6.18588rem;
+  }
+  .center-logo{
+    left: 40vw;
+  }
+  .lower-icons{
+    width: 2.625rem;
+height: 2.625rem;
+  }
+
+  .icons{
+    height: 3opx;
+    width:30px;
+  }
+
+  .icon-type{
+    font-size: 0.75rem;
+  }
+  .icon-value{
+    font-size: 1rem;
+  }
+  .right-half{
+    height: 63vh;
+  }
+  .price{
+    visibility: hidden;
+  }
+  .header{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 5px;
+  }
+  .price-phone{
+    position: absolute;
+    right: 45px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    top: 5px;
+  }
+}
+
+@media (min-width: 432px) {
+  .price-phone{
+    visibility: hidden;
+  }
+  .header{
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 376px) {
+  .digits{
+    gap:15px;
+  }
+
+  .some-text{
+    line-height: 1.5rem;
+    margin-bottom: 5px;
+  }
+  .digit-lower-text{
+    font-size: 0.55rem;
+  }
+  .digit-upper-text{
+    font-size: 12px;
+  }
+  .center-logo{
+    left: 35vw;
+  }
+  .icons-container{
+    gap: 40px;
+  }
 }
